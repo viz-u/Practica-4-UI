@@ -65,7 +65,8 @@
             android:layout_gravity="fill_horizontal"
             android:layout_columnWeight="1"
             android:textSize="@dimen/menu_buttons_text"
-            android:paddingVertical="@dimen/menu_buttons_paddings" />
+            android:paddingVertical="@dimen/menu_buttons_paddings"
+            android:id="@+id/button_combinations"/>
 
         <Button
             android:text="@string/tortas"
@@ -76,7 +77,8 @@
             android:layout_gravity="fill_horizontal"
             android:layout_columnWeight="1"
             android:textSize="@dimen/menu_buttons_text"
-            android:paddingVertical="@dimen/menu_buttons_paddings" />
+            android:paddingVertical="@dimen/menu_buttons_paddings"
+            android:id="@+id/button_tortas"/>
 
         <Button
             android:text="@string/sopas"
@@ -87,7 +89,8 @@
             android:layout_gravity="fill_horizontal"
             android:layout_columnWeight="1"
             android:textSize="@dimen/menu_buttons_text"
-            android:paddingVertical="@dimen/menu_buttons_paddings" />
+            android:paddingVertical="@dimen/menu_buttons_paddings"
+            android:id="@+id/button_sopas"/>
 
         <Button
             android:text="@string/cold_drinks"
@@ -98,7 +101,8 @@
             android:layout_gravity="fill_horizontal"
             android:layout_columnWeight="1"
             android:textSize="@dimen/menu_buttons_text"
-            android:paddingVertical="@dimen/menu_buttons_paddings" />
+            android:paddingVertical="@dimen/menu_buttons_paddings"
+            android:id="@+id/button_drinks"/>
 
 
 
