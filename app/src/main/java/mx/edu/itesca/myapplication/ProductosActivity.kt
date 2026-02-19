@@ -35,45 +35,45 @@ class ProductosActivity : AppCompatActivity() {
         menu.add(Product("Coctel", R.drawable.coctel, "Shrimp cocktail", 16.49))
     }
 }
+private class AdaptadorProductos : BaseAdapter {
+    var productos = ArrayList<Product>()
+    var contexto: Context? = null
 
-private class AdaptadorProductos: BaseAdapter{
-    var productos= ArrayList<Product>()
-    var contexto: Context?=null
-
-    constructor(context: Context, producto: ArrayList<Product>){
-        this.productos=productos
-        this.contexto=contexto
+    // Constructor corregido
+    constructor(context: Context, producto: ArrayList<Product>) {
+        this.productos = producto
+        this.contexto = context
     }
 
     override fun getCount(): Int {
-        TODO("Not yet implemented")
+        return productos.size // Regresa el tamaño real
     }
 
-    override fun getItem(position: Int): Any? {
-        TODO("Not yet implemented")
+    override fun getItem(position: Int): Any {
+        return productos[position] // Regresa el objeto
     }
 
     override fun getItemId(position: Int): Long {
-        TODO("Not yet implemented")
+        return position.toLong() // Regresa la posición
     }
 
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
         var prod = productos[position]
-
         var inflador = LayoutInflater.from(contexto)
-        var vista = inflador.inflate(R.layout.producto_view, null)
 
-        var imagen = vista.findViewById(R.id.producto_img) as ImageView
-        var nombre = vista.findViewById(R.id.producto_nombre) as TextView
-        var desc = vista.findViewById(R.id.producto_desc) as TextView
-        var precio = vista.findViewById(R.id.producto_precio) as TextView
+        // Es mejor usar 'parent' para inflar correctamente
+        var vista = inflador.inflate(R.layout.producto_view, parent, false)
+
+        var imagen = vista.findViewById<ImageView>(R.id.producto_img)
+        var nombre = vista.findViewById<TextView>(R.id.producto_nombre)
+        var desc = vista.findViewById<TextView>(R.id.producto_desc)
+        var precio = vista.findViewById<TextView>(R.id.producto_precio)
 
         imagen.setImageResource(prod.image)
-        nombre.setText(prod.name)
-        desc.setText(prod.description)
-        precio.setText("$${prod.price}")
+        nombre.text = prod.name
+        desc.text = prod.description
+        precio.text = "$${prod.price}"
 
         return vista
     }
-
 }
